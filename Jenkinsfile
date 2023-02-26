@@ -8,8 +8,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                docker build . -f dockerfile -t mostafag95/projectt --network host
-                docker push mostafag95/projectt
+                docker build . -f dockerfile -t mostafag95/projecttt --network host
+                docker push mostafag95/projecttt
                 """
                 }
             }
