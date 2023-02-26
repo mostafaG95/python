@@ -10,6 +10,7 @@ pipeline {
                 docker login -u ${USERNAME} -p ${PASSWORD}
                 docker build . -f Dockerfile -t mostafag95/projecttt --network host
                 docker push mostafag95/projecttt
+                pwd
                 """
                 }
             }
