@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('CI') {
             steps {
-                git 'https://github.com/mostafaG95/python.git'
+                git url: 'https://github.com/mostafaG95/python.git', branch: 'main'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
@@ -16,7 +16,6 @@ pipeline {
         }
          stage('CD') {
             steps {
-                git 'https://github.com/mostafaG95/python.git'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
    
